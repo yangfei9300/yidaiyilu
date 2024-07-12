@@ -1,22 +1,25 @@
-import App from './App'
+// 入口文件
 
-// #ifndef VUE3
 import Vue from 'vue'
-import './uni.promisify.adaptor'
-Vue.config.productionTip = false
+import store from './store'
+import App from './App'
+import axios from "./common/axios.js"
+import paths from "./common/path"
+import tools from "./common/tools.js"
+
+import AES from '@/js_sdk/ar-aes/ar-aes.js'
+Vue.prototype.AES = AES.AES
+
+//引用样式
+import './style/style.css'
+import './style/style_rpx.css'
+Vue.prototype.$store = store; //挂在到Vue实例上
+Vue.prototype.$axios = axios ;//请求封装
+Vue.prototype.$paths = paths ;//请求地址
+Vue.prototype.$tools = tools ;//工具类
+// 工具类
 App.mpType = 'app'
 const app = new Vue({
-  ...App
-})
+    ...App
+})   
 app.$mount()
-// #endif
-
-// #ifdef VUE3
-import { createSSRApp } from 'vue'
-export function createApp() {
-  const app = createSSRApp(App)
-  return {
-    app
-  }
-}
-// #endif

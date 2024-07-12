@@ -24,8 +24,14 @@
 			this.activityInfo=uni.getStorageSync("activityInfo");
 			if(options.type==3){
 				this.getTishi();
+				uni.setNavigationBarTitle({
+					title:"友情提示"
+				})
 			}else if(options.type==5){
 				this.getZhiyin()
+				uni.setNavigationBarTitle({
+					title:"会场指引"
+				})
 			}
 			
 		},

@@ -1,6 +1,8 @@
 <template>
 	<view>
 		<view class="colonn">
+			<image :src="activityInfo.bannerImage"
+			class="w-750" mode="widthFix"></image>
 			<view class="roww p-all-20 border_bottom" v-for="(item,index) in phoens">
 				<view>{{item.name}}</view>
 				<view class="allline"></view>
@@ -18,10 +20,12 @@
 	export default {
 		data() {
 			return {
-				phoens:[]
+				phoens:[],
+				activityInfo:{}
 			}
 		},
 		onLoad() {
+			this.activityInfo=uni.getStorageSync("activityInfo");
 			this.getPhone();
 		},
 		methods: {

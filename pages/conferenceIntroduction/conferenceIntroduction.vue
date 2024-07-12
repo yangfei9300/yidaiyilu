@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<rich-text v-if="options.type==1" :nodes="activityInfo.description"></rich-text>
-		<rich-text v-if="options.type==2" :nodes="activityInfo.description"></rich-text>
+		<rich-text v-if="options.type==2" :nodes="activityInfo.agenda"></rich-text>
 	</view>
 </template>
 

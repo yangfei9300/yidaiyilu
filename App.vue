@@ -13,7 +13,7 @@
 		},
 		onHide: function() {   
 			console.log('App Hide');
-		}   ,
+		},
 		methods:{
 			//AES加密
 			aesEncrypt(encrypt) {
